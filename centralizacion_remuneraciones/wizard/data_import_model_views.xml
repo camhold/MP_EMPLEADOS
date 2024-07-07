@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="import_action" model="ir.actions.act_window">
+        <field name="name">Centralizacion de Remuneraciones</field>
+        <field name="res_model">data.import.model</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="chemical_import_form" model="ir.ui.view">
+        <field name="name">centralizacion.remuneraciones.form</field>
+        <field name="model">data.import.model</field>
+        <field name="arch" type="xml">
+            <form string="Chemical Import">
+                <div>
+                    Agregar archivo de CENTRALIZACION DE REMUNERACIONES.<br/>
+                    <br/>
+                </div>
+                <label string="Fecha de Remuneracion" for="file_update"/>
+                <field name="file_update"/>
+                <br/>
+                <field name="attachment_file"
+                    string="Select File"
+                    aria-label="Select File"
+                    nolabel="1"
+                    widget="binary"
+                    options="{'accepted_file_extensions': '.csv'}"
+                    filename="attachment_name"/>
+                <field name="attachment_name" invisible="1"/>
+                <br/>
+                <footer>
+                    <button name="action_import" string="Validar" type="object" class="btn-primary"/>
+                    <button special="cancel" data-hotkey="z" string="Cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="confirmation_view_form" model="ir.ui.view">
+        <field name="name">confiracion.centralizacion.remuneraciones.form</field>
+        <field name="model">data.import.model</field>
+        <field name="arch" type="xml">
+            <form>
+                <div>
+                    Ingresa la contrasena.<br/>
+                    <br/>
+                    <field name="pwd"/>
+                </div>
+                <br/>
+                <footer>
+                    <button name="action_import" string="Validar" type="object" class="btn-primary"/>
+                    <button special="cancel" data-hotkey="z" string="Cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="confirmation_pwd" model="ir.actions.act_window">
+        <field name="name">Confirmacion de contrasena</field>
+        <field name="res_model">data.import.model</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="confirmation_view_form" />
+    </record>
+
+</odoo>

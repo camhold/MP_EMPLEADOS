@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sequence_document_type_ff" model="ir.sequence">
+        <field name='name'>Secuencia para Fondo Fijo</field>
+        <field name='code'>FF</field>
+        <field name="prefix">FF/%(year)s/%(month)s/</field>
+        <field name="padding">5</field>
+    </record>
+</odoo>

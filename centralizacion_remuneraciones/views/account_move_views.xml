@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_move_locked_view" model="ir.ui.view">
+        <field name="name">Account move locked</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='date']" position="after">
+                    <field name="is_locked" invisible="1"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <record id="action_view_account_move_remuneraciones_view" model="ir.actions.act_window">
+        <field name="name">Ver Remuneraciones</field>
+        <field name="res_model">account.move</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('name', 'ilike', 'REM/%')]</field>
+        <field name="context">{'default_permission': True}</field>
+        <field name="view_id" ref="account.view_move_tree" />
+        <field name="target">main</field>
+    </record>
+</odoo>

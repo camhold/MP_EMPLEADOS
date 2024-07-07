@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="menu_hr_centralizacion_remuneraciones_root"
+        name="Centralizacion de Remuneraciones"
+        groups="hr.group_hr_manager"
+        parent="hr.menu_hr_root"
+        sequence="300"/>
+
+    <menuitem
+        id="menu_hr_centralizacion_remuneraciones"
+        name="Importacion"
+        groups="hr.group_hr_manager"
+        action="import_action"
+        parent="menu_hr_centralizacion_remuneraciones_root"
+        sequence="300"/>
+
+    <menuitem
+        id="menu_hr_centralizacion_remuneraciones_view_revision"
+        name="Revision"
+        groups="hr.group_hr_manager"
+        action="view_confirmation_pwd"
+        parent="menu_hr_centralizacion_remuneraciones_root"
+        sequence="400"/>
+
+</odoo>

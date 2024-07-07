@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="base_settings_asset_fixed_form" model="ir.ui.view">
+        <field name="name">base_settings_asset_fixed_form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='languages']" position="after">
+                <div id="asset_fixes">
+                    <h2>Fondo Fijo</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 o_setting_box" id="account_active">
+                            <div class="o_setting_right_pane">
+                                <label for="account_active" class="o_form_label" />
+                                <div class="text-muted">
+                                    <field name="account_active" class="font-weight-bold"/>
+                                </div>
+                                <label for="account_passive" class="o_form_label" />
+                                <div class="text-muted">
+                                    <field name="account_passive" class="font-weight-bold"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
